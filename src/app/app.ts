@@ -42,6 +42,8 @@ export class App {
     { label: 'Contacto', href: '#developer' },
   ];
 
+  readonly heroImage = 'assets/images/screenshots/presentation.png';
+
   readonly features: Feature[] = [
     {
       icon: 'qr_code_scanner',

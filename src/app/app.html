@@ -11,9 +11,7 @@
           Seguridad en
           <span class="gradient-text">tus manos</span>
         </h1>
-        <p>
-          Identifica facilmente escaneando con la camara los billes sin valor legal segun bcb
-        </p>
+        <p>Identifica facilmente escaneando con la camara los billes sin valor legal segun bcb</p>
         <div class="hero-actions">
           <button type="button" class="primary-btn" (click)="descargarApk()">
             <span class="material-symbols-outlined">android</span>
@@ -22,18 +20,14 @@
         </div>
       </div>
       <div class="hero-device" aria-hidden="true">
-        <div class="hero-device__glow"></div>
-        <div class="device">
-          <div class="device-top">12:00</div>
-          <div class="device-screen">
-            <div class="device-pattern"></div>
-            <div class="device-overlay">
-              <div class="badge success">Verificacion Exitosa</div>
-              <p>Serie A detectada</p>
-            </div>
-          </div>
-          <div class="device-footer">Verificador BO</div>
-        </div>
+        <img
+          [ngSrc]="heroImage"
+          width="320"
+          height="640"
+          alt="Mockup de la app en el hero"
+          loading="lazy"
+          class="hero-screen"
+        />
       </div>
     </section>
 
@@ -82,7 +76,6 @@
       </div>
     </section>
 
-
     <section class="developer-section" id="developer">
       <div class="developer-grid">
         <article class="developer-card">
@@ -121,5 +114,4 @@
     [socialLinks]="socialLinks"
   ></app-shell-footer>
   <router-outlet></router-outlet>
-
 </div>
