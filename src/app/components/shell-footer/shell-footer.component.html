@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="footer-brand">
+    <span class="material-symbols-outlined">payments</span>
+    <span>{{ brandName }}</span>
+  </div>
+  <p>{{ description }}</p>
+  <div class="social-buttons">
+    <a
+      *ngFor="let social of socialLinks"
+      [href]="social.href"
+      [attr.aria-label]="social.label"
+      target="_blank"
+      rel="noopener"
+    >
+      <span class="material-symbols-outlined">{{ social.icon }}</span>
+    </a>
+  </div>
+</footer>

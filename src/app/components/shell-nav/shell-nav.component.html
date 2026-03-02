@@ -1,0 +1,29 @@
+<header class="app-nav">
+  <div class="brand">
+    <div class="brand-icon">
+      <span class="material-symbols-outlined">payments</span>
+    </div>
+    <span class="brand-name">{{ brandName }}</span>
+  </div>
+
+  <button
+    type="button"
+    class="mobile-toggle"
+    [attr.aria-expanded]="menuOpen()"
+    aria-label="Alternar navegación"
+    (click)="toggleMenu()"
+  >
+    <span class="material-symbols-outlined">
+      {{ menuOpen() ? 'close' : 'menu' }}
+    </span>
+  </button>
+
+  <nav class="nav-links" [class.open]="menuOpen()">
+    <a *ngFor="let link of links" [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+  </nav>
+
+  <a class="download-btn" [href]="ctaHref">
+    <span class="material-symbols-outlined">android</span>
+    {{ ctaLabel }}
+  </a>
+</header>
