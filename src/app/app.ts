@@ -101,4 +101,11 @@ export class App {
     { label: 'LinkedIn', href: '#', icon: 'work' },
     { label: 'WhatsApp', href: '#', icon: 'chat' },
   ];
+
+  descargarApk(): void {
+    window.open(
+      'https://github.com/SudoCode76/Verificador-de-Billetes-BO/releases/download/v1.0.0/Verificador.de.Billetes.BO.apk',
+      '_blank',
+    );
+  }
 }

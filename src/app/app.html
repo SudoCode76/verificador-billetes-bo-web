@@ -12,11 +12,10 @@
           <span class="gradient-text">tus manos</span>
         </h1>
         <p>
-          Identifique cortes y series de billetes bolivianos con facilidad. Una herramienta moderna
-          inspirada en Windows 11 para su tranquilidad financiera.
+          Identifica facilmente escaneando con la camara los billes sin valor legal segun bcb
         </p>
         <div class="hero-actions">
-          <button type="button" class="primary-btn">
+          <button type="button" class="primary-btn" (click)="descargarApk()">
             <span class="material-symbols-outlined">android</span>
             Descargar para Android
           </button>
@@ -39,13 +38,6 @@
     </section>
 
     <section class="features-section" id="features">
-      <div class="section-heading">
-        <h2>Caracteristicas</h2>
-        <p>
-          Descubre como protegemos tus transacciones identificando billetes autenticos con nuestra
-          tecnologia rapida y segura.
-        </p>
-      </div>
       <div class="feature-grid">
         <article class="feature-card" *ngFor="let feature of features">
           <div class="icon-circle">
@@ -90,24 +82,6 @@
       </div>
     </section>
 
-    <section class="install-section" id="install">
-      <div class="section-heading">
-        <h2>Como instalar</h2>
-        <p>
-          Instale el APK siguiendo practicas seguras y configure los permisos esenciales para usar
-          el verificador.
-        </p>
-      </div>
-      <div class="install-grid">
-        <article class="step-card" *ngFor="let step of installSteps; let idx = index">
-          <div class="step-index">{{ idx + 1 }}</div>
-          <div>
-            <h3>{{ step.label }}</h3>
-            <p>{{ step.detail }}</p>
-          </div>
-        </article>
-      </div>
-    </section>
 
     <section class="developer-section" id="developer">
       <div class="developer-grid">
@@ -146,6 +120,6 @@
     description="© 2026 Keybusy Software. Todos los derechos reservados."
     [socialLinks]="socialLinks"
   ></app-shell-footer>
-</div>
+  <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+</div>

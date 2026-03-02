@@ -1,12 +1,13 @@
 /* Component-specific styles */
 :host {
   display: block;
+  overflow: hidden;
 }
 
 .page-shell {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 3rem;
+  padding-bottom: 0;
   overflow: hidden;
   background: var(--background-light, #f3f3f3);
   color: var(--text-main, #1a1a1a);
@@ -29,9 +30,10 @@
 }
 
 .page-glow--bottom {
-  bottom: -10%;
+  bottom: 50px;
   left: -10%;
   background: rgba(59, 130, 246, 0.25);
+  opacity: 0.4;
 }
 
 .page-content {
