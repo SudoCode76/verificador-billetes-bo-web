@@ -17,7 +17,7 @@ export class App {
     { label: 'Caracteristicas', href: '#features' },
     { label: 'Capturas', href: '#screenshots' },
     { label: 'Como instalar', href: '/install' },
-    { label: 'Contacto', href: '#developer' },
+    { label: 'Contacto', href: '/contact' },
   ];
 
   readonly socialLinks: SocialLink[] = [

@@ -10,4 +10,8 @@ export const routes: Routes = [
     path: 'install',
     loadComponent: () => import('./pages/install/install.page').then((m) => m.InstallPage),
   },
+  {
+    path: 'contact',
+    loadComponent: () => import('./pages/contact/contact.page').then((m) => m.ContactPage),
+  },
 ];

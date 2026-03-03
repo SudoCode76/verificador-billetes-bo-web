@@ -36,6 +36,10 @@
   /* Accent (unchanged across themes) */
   --accent: #0a87f5;
   --accent-alt: #2563eb;
+  /* WhatsApp palette */
+  --whatsapp: #25d366;
+  --whatsapp-hover: #1ebd59;
+  --whatsapp-light: #dcf8c6;
 
   /* Legacy aliases kept for backwards compat */
   --background-light: #f3f3f3;
