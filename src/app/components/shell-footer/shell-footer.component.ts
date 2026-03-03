@@ -1,17 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SocialLink } from '../../models/social-link.model';
 
-export interface SocialLink {
-  label: string;
-  href: string;
-  icon: string;
-}
+export type { SocialLink };
 
 @Component({
   selector: 'app-shell-footer',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './shell-footer.component.html',
   styleUrls: ['./shell-footer.component.css'],
 })

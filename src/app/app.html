@@ -33,13 +33,15 @@
 
     <section class="features-section" id="features">
       <div class="feature-grid">
-        <article class="feature-card" *ngFor="let feature of features">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined">{{ feature.icon }}</span>
-          </div>
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
-        </article>
+        @for (feature of features; track feature.title) {
+          <article class="feature-card">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined">{{ feature.icon }}</span>
+            </div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </article>
+        }
       </div>
     </section>
 
@@ -50,29 +52,27 @@
           <p>Eche un vistazo a la interfaz limpia y funcional de nuestra aplicacion.</p>
         </div>
         <div class="capture-controls">
-          <button type="button" aria-label="Anterior">
+          <button type="button" aria-label="Anterior" (click)="prevScreenshot()">
             <span class="material-symbols-outlined">arrow_back</span>
           </button>
-          <button type="button" aria-label="Siguiente">
+          <button type="button" aria-label="Siguiente" (click)="nextScreenshot()">
             <span class="material-symbols-outlined">arrow_forward</span>
           </button>
         </div>
       </div>
       <div class="screenshot-grid">
-        <article
-          class="screenshot-card"
-          *ngFor="let screenshot of screenshots; let index = index"
-          [style.animationDelay]="index * 0.08 + 's'"
-        >
-          <img
-            [ngSrc]="screenshot.src"
-            width="320"
-            height="640"
-            [alt]="screenshot.alt"
-            loading="lazy"
-            class="screenshot"
-          />
-        </article>
+        @for (screenshot of visibleScreenshots(); track screenshot.src; let index = $index) {
+          <article class="screenshot-card" [style.animationDelay]="index * 0.08 + 's'">
+            <img
+              [ngSrc]="screenshot.src"
+              width="320"
+              height="640"
+              [alt]="screenshot.alt"
+              loading="lazy"
+              class="screenshot"
+            />
+          </article>
+        }
       </div>
     </section>
 

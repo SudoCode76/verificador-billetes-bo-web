@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { Component, computed, signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ShellFooterComponent } from './components/shell-footer/shell-footer.component';
 import { ShellNavComponent } from './components/shell-nav/shell-nav.component';
+import { SocialLink } from './models/social-link.model';
 
 interface Feature {
   icon: string;
@@ -20,16 +21,10 @@ interface InstallStep {
   detail: string;
 }
 
-interface SocialLink {
-  label: string;
-  href: string;
-  icon: string;
-}
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NgOptimizedImage, ShellNavComponent, ShellFooterComponent],
+  imports: [RouterOutlet, NgOptimizedImage, ShellNavComponent, ShellFooterComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
 })
@@ -103,6 +98,29 @@ export class App {
     { label: 'LinkedIn', href: '#', icon: 'work' },
     { label: 'WhatsApp', href: '#', icon: 'chat' },
   ];
+
+  /** Index of the first visible screenshot (carousel state). */
+  private readonly screenshotIndex = signal(0);
+
+  /** Number of screenshots visible at once (always 3 in this layout). */
+  private readonly visibleCount = 3;
+
+  /** Currently visible screenshots slice, wraps around cyclically. */
+  readonly visibleScreenshots = computed<Screenshot[]>(() => {
+    const total = this.screenshots.length;
+    return Array.from(
+      { length: this.visibleCount },
+      (_, i) => this.screenshots[(this.screenshotIndex() + i) % total],
+    );
+  });
+
+  prevScreenshot(): void {
+    this.screenshotIndex.update((i) => (i - 1 + this.screenshots.length) % this.screenshots.length);
+  }
+
+  nextScreenshot(): void {
+    this.screenshotIndex.update((i) => (i + 1) % this.screenshots.length);
+  }
 
   descargarApk(): void {
     window.open(

@@ -2,13 +2,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
+/* ============================================================
+   Design tokens — Light mode (default)
+   ============================================================ */
 :root {
-  --background-light: #f3f3f3;
-  --background-dark: #141414;
+  /* Page background */
+  --bg-page: #f3f3f3;
+
+  /* Glassmorphic surfaces */
+  --surface-glass: rgba(255, 255, 255, 0.65);
+  --surface-card: rgba(255, 255, 255, 0.75);
+  --surface-card-hover: rgba(255, 255, 255, 0.9);
+  --surface-nav-dropdown: rgba(255, 255, 255, 0.96);
+  --surface-footer: rgba(255, 255, 255, 0.7);
+
+  /* Borders */
+  --border-subtle: rgba(148, 163, 184, 0.3);
+  --border-medium: rgba(148, 163, 184, 0.5);
+
+  /* Typography */
   --text-main: #111827;
-  --text-secondary: #4b5563;
+  --text-secondary: rgba(26, 26, 26, 0.65);
+  --text-brand: rgba(15, 23, 42, 0.85);
+
+  /* Button surfaces */
+  --btn-surface: #ffffff;
+  --btn-hover: #f1f5f9;
+
+  /* Dot-grid overlay */
+  --dot-grid-color: rgba(0, 0, 0, 0.06);
+
+  /* Accent (unchanged across themes) */
+  --accent: #0a87f5;
+  --accent-alt: #2563eb;
+
+  /* Legacy aliases kept for backwards compat */
+  --background-light: #f3f3f3;
+  --background-dark: #0d0d0d;
 }
 
+/* ============================================================
+   Design tokens — Dark mode override
+   Applied when <html> carries the class "dark"
+   ============================================================ */
+:root.dark {
+  --bg-page: #0d0d0d;
+
+  --surface-glass: rgba(18, 18, 18, 0.78);
+  --surface-card: rgba(255, 255, 255, 0.05);
+  --surface-card-hover: rgba(255, 255, 255, 0.09);
+  --surface-nav-dropdown: rgba(14, 14, 14, 0.97);
+  --surface-footer: rgba(18, 18, 18, 0.78);
+
+  --border-subtle: rgba(148, 163, 184, 0.12);
+  --border-medium: rgba(148, 163, 184, 0.22);
+
+  --text-main: #f1f5f9;
+  --text-secondary: rgba(241, 245, 249, 0.55);
+  --text-brand: rgba(241, 245, 249, 0.9);
+
+  --btn-surface: rgba(255, 255, 255, 0.08);
+  --btn-hover: rgba(255, 255, 255, 0.14);
+
+  --dot-grid-color: rgba(255, 255, 255, 0.035);
+}
+
+/* ============================================================
+   Global reset & base
+   ============================================================ */
 * {
   box-sizing: border-box;
 }
@@ -16,18 +77,22 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  background: var(--background-light);
+  background: var(--bg-page);
   color: var(--text-main);
   min-height: 100vh;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
+
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--dot-grid-color) 1px, transparent 1px);
   background-size: 160px 160px;
-  opacity: 0.4;
+  opacity: 0.55;
 }
 
 .material-symbols-outlined {
@@ -37,8 +102,5 @@ body::after {
   font-size: 1.2rem;
   line-height: 1;
 }
-
-
-
 
 @import './app/app.css';
