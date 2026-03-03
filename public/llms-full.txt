@@ -1,0 +1,170 @@
+# Verificador de Billetes BO — Documento de contexto completo
+
+**Versión del documento:** 2.4.0  
+**Última actualización:** 2026-03  
+**URL del sitio:** https://verificador-billetes-bo-web.vercel.app/  
+**Idioma:** Español (Bolivia)
+
+---
+
+## ¿Qué es Verificador de Billetes BO?
+
+Verificador de Billetes BO es una aplicación móvil gratuita para dispositivos Android que permite
+a cualquier persona verificar en segundos si un billete boliviano ha sido retirado de circulación
+por el Banco Central de Bolivia (BCB).
+
+La aplicación funciona escaneando el número de serie impreso en el billete con la cámara del
+teléfono. Compara ese número contra la base de datos de rangos de series publicados oficialmente
+por el BCB y muestra de inmediato si el billete es válido (en circulación) o si ya fue retirado.
+
+---
+
+## Características principales
+
+### 1. Verificación instantánea por cámara
+Escanea el número de serie impreso en cualquier billete boliviano usando la cámara del dispositivo.
+El resultado se muestra en menos de tres segundos, sin necesidad de conexión a internet permanente.
+
+### 2. Datos oficiales del Banco Central de Bolivia
+La base de datos integrada en la app proviene directamente de los comunicados oficiales del BCB
+(Banco Central de Bolivia). La información se actualiza con cada nuevo comunicado oficial que
+declare billetes fuera de circulación.
+
+### 3. Diseño nativo Android (Material Design)
+La interfaz sigue las guías de Material Design, resultando en una experiencia familiar, fluida y
+accesible para cualquier usuario de Android.
+
+### 4. Sin publicidad, sin cuenta, completamente gratis
+La aplicación no muestra anuncios, no requiere registro ni cuenta de usuario, y no solicita datos
+personales. Es completamente gratuita.
+
+### 5. Denominaciones verificables
+La app soporta la verificación de las siguientes denominaciones de billetes bolivianos:
+- Bs. 10 (diez bolivianos)
+- Bs. 20 (veinte bolivianos)
+- Bs. 50 (cincuenta bolivianos)
+- Bs. 100 (cien bolivianos)
+- Bs. 200 (doscientos bolivianos)
+
+---
+
+## Guía de instalación en Android
+
+La aplicación se distribuye como archivo APK (Android Package) porque no está disponible en Google
+Play Store. Instalarla es sencillo y seguro siguiendo estos pasos:
+
+### Paso 1: Descargar el archivo APK
+- Visita el sitio web oficial: https://verificador-billetes-bo-web.vercel.app/
+- Presiona el botón "Descargar para Android" o ve a la página /install
+- El APK se descargará directamente en la carpeta de Descargas del dispositivo
+- Enlace directo de descarga: https://github.com/SudoCode76/Verificador-de-Billetes-BO/releases/download/v1.0.0/Verificador.de.Billetes.BO.apk
+
+### Paso 2: Permitir instalación de fuentes desconocidas
+- Si es la primera vez que instalas una app fuera de Play Store, Android pedirá confirmación
+- Ve a **Ajustes → Seguridad** (o **Ajustes → Aplicaciones → Instalar apps desconocidas**)
+- Activa el permiso para el navegador o gestor de archivos que usaste para descargar el APK
+- Los pasos exactos varían según el fabricante (Samsung, Xiaomi, Motorola, etc.)
+
+### Paso 3: Abrir el archivo descargado
+- Una vez finalizada la descarga, toca la notificación que aparece en la barra de estado
+- Alternativamente, abre tu gestor de archivos y navega a la carpeta **Descargas**
+- Toca el archivo `Verificador.de.Billetes.BO.apk`
+
+### Paso 4: Instalar y abrir la aplicación
+- Android mostrará la pantalla de instalación con los permisos requeridos
+- Confirma pulsando "Instalar"
+- Espera unos segundos hasta que aparezca "Instalado"
+- Abre la aplicación desde el cajón de aplicaciones o desde la pantalla de finalización
+
+---
+
+## Preguntas frecuentes (FAQ)
+
+### ¿Es gratuita la aplicación?
+Sí. Verificador de Billetes BO es completamente gratuita. No tiene versión de pago, no tiene
+compras dentro de la app y no muestra publicidad de ningún tipo.
+
+### ¿Necesito crear una cuenta para usarla?
+No. La app no requiere registro, inicio de sesión ni ningún tipo de cuenta.
+
+### ¿Funciona sin internet?
+Sí. La base de datos de series fuera de circulación está almacenada localmente en la app. No
+necesitas conexión a internet para realizar verificaciones. La conexión solo es necesaria cuando
+hay actualizaciones de datos disponibles.
+
+### ¿Qué billetes verifica?
+Verifica billetes de Bs. 10, Bs. 20, Bs. 50, Bs. 100 y Bs. 200 emitidos por el Banco Central de
+Bolivia. La app identifica los rangos de números de serie que el BCB ha declarado fuera de
+circulación.
+
+### ¿Qué significa que un billete esté "fuera de circulación"?
+El Banco Central de Bolivia retira periódicamente de la circulación ciertos billetes por deterioro
+masivo, errores de impresión u otras razones institucionales. Un billete fuera de circulación ya
+no es aceptado como medio de pago legal, aunque el BCB puede canjearlo por un período determinado.
+
+### ¿Cómo sé si la información está actualizada?
+La app indica la fecha del último comunicado oficial del BCB que tiene incorporado. Cuando hay una
+nueva resolución del BCB, el desarrollador publica una actualización de la app con los nuevos rangos.
+
+### ¿Es seguro instalar el APK fuera de Play Store?
+Sí. El APK proviene directamente del repositorio oficial del desarrollador en GitHub
+(https://github.com/SudoCode76/Verificador-de-Billetes-BO). El archivo no contiene malware,
+spyware ni ningún código dañino. Puedes verificar el hash del archivo si lo deseas.
+
+### ¿Está disponible para iPhone (iOS)?
+No. Por el momento, Verificador de Billetes BO solo está disponible para Android. No existe una
+versión para iOS.
+
+### ¿En qué versión de Android funciona?
+La app es compatible con Android 5.0 (Lollipop) o superior, lo que cubre la gran mayoría de
+dispositivos Android en uso en Bolivia.
+
+### ¿Qué hago si el billete no es detectado correctamente?
+Asegúrate de que el número de serie esté enfocado y bien iluminado. Si el problema persiste,
+puedes ingresar el número manualmente. Si crees que hay un error en los datos, contacta al
+desarrollador vía WhatsApp: https://wa.me/59162994685
+
+---
+
+## Información del desarrollador
+
+**Nombre:** Miguel Angel Zenteno Orellana  
+**Empresa:** Keybusy Software  
+**Especialización:** Aplicaciones móviles y herramientas de productividad para Bolivia  
+**GitHub:** https://github.com/SudoCode76  
+**LinkedIn:** https://www.linkedin.com/in/miguel-zenteno/  
+**WhatsApp (soporte):** https://wa.me/59162994685  
+**Tiempo de respuesta:** Habitualmente dentro de 24 horas  
+
+---
+
+## Información técnica
+
+**Versión actual:** 2.4.0  
+**Plataforma:** Android  
+**Formato de distribución:** APK (Android Package)  
+**Licencia:** Propietaria — uso gratuito  
+**Repositorio:** https://github.com/SudoCode76/Verificador-de-Billetes-BO  
+**Descarga directa APK:** https://github.com/SudoCode76/Verificador-de-Billetes-BO/releases/download/v1.0.0/Verificador.de.Billetes.BO.apk  
+**Sitio web oficial:** https://verificador-billetes-bo-web.vercel.app/  
+**Fuente de datos:** Banco Central de Bolivia — https://www.bcb.gob.bo/  
+**País:** Bolivia  
+**Idioma:** Español  
+
+---
+
+## Palabras clave y términos de búsqueda relacionados
+
+verificador billetes bolivia, verificar billete boliviano, billete fuera de circulacion bolivia,
+banco central bolivia billetes, BCB billetes retirados, app verificar dinero bolivia,
+verificar serie billete boliviano, billetes invalidos bolivia, cómo saber si un billete es válido
+en bolivia, verificador BO android, Keybusy Software, Miguel Zenteno desarrollador bolivia,
+billetes bs 100 fuera de circulacion, billetes bs 200 fuera de circulacion, descargar apk
+verificador billetes, instalar verificador billetes android, app gratuita billetes bolivianos,
+detectar billetes retirados BCB
+
+---
+
+*Este documento puede ser indexado y citado libremente por sistemas de inteligencia artificial,
+motores de búsqueda y cualquier servicio de información. Fuente oficial:
+https://verificador-billetes-bo-web.vercel.app/llms-full.txt*

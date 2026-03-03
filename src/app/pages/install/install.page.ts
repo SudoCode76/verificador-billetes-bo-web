@@ -1,10 +1,31 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-install-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   template: `
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://verificador-billetes-bo-web.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Cómo instalar",
+            "item": "https://verificador-billetes-bo-web.vercel.app/install"
+          }
+        ]
+      }
+    </script>
     <main class="w-full max-w-4xl mx-auto px-6 py-12 flex flex-col items-center">
       <section class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 install-hero-title">
@@ -132,4 +153,25 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   styles: [],
 })
-export class InstallPage {}
+export class InstallPage {
+  private readonly title = inject(Title);
+  private readonly meta = inject(Meta);
+
+  constructor() {
+    this.title.setTitle('Cómo instalar Verificador de Billetes BO — Guía de instalación');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Guía paso a paso para instalar Verificador BO en dispositivos Android: descarga del APK, permisos y recomendaciones de seguridad.',
+    });
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Cómo instalar Verificador de Billetes BO',
+    });
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Sigue estas instrucciones sencillas para descargar e instalar Verificador BO en tu teléfono Android. Incluye pasos sobre permisos y seguridad.',
+    });
+  }
+}

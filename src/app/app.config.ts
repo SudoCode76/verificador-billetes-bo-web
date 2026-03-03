@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, Injectable, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter, TitleStrategy } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -8,6 +8,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
  * Simple TitleStrategy that uses the `title` field from route data when present.
  * This ensures server-side rendered pages have proper titles per route.
  */
+@Injectable()
 class RouteTitleStrategy extends TitleStrategy {
   updateTitle(routerState: any) {
     const title = this.buildTitle(routerState);

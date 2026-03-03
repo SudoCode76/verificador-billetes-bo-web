@@ -1,3 +1,59 @@
+# robots.txt — Verificador de Billetes BO
+# https://verificador-billetes-bo-web.vercel.app/
+
+# ─── Rastreadores web estándar ────────────────────────────────────────────────
 User-agent: *
 Allow: /
+Disallow:
+
+# ─── OpenAI / ChatGPT ─────────────────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ─── Anthropic / Claude ───────────────────────────────────────────────────────
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ─── Google (AI Overview, Bard/Gemini) ────────────────────────────────────────
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ─── Perplexity ───────────────────────────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ─── Meta / Llama ─────────────────────────────────────────────────────────────
+User-agent: FacebookBot
+Allow: /
+
+# ─── Apple ────────────────────────────────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ─── Cohere ───────────────────────────────────────────────────────────────────
+User-agent: cohere-ai
+Allow: /
+
+# ─── Common Crawl (training data) ─────────────────────────────────────────────
+User-agent: CCBot
+Allow: /
+
+# ─── Sitemap & AI context ─────────────────────────────────────────────────────
 Sitemap: https://verificador-billetes-bo-web.vercel.app/sitemap.xml
+
+# Documento de contexto para sistemas de IA (llms.txt estándar)
+# https://llmstxt.org/
+LLMs: https://verificador-billetes-bo-web.vercel.app/llms.txt
+LLMs-full: https://verificador-billetes-bo-web.vercel.app/llms-full.txt

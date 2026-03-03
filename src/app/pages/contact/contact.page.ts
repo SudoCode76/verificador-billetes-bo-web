@@ -1,10 +1,31 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   template: `
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://verificador-billetes-bo-web.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contacto",
+            "item": "https://verificador-billetes-bo-web.vercel.app/contact"
+          }
+        ]
+      }
+    </script>
     <main class="w-full max-w-2xl mx-auto flex flex-col items-center flex-grow pt-12 pb-20 px-6">
       <section class="text-center mb-10">
         <h1 class="text-4xl font-bold mb-3 tracking-tight install-hero-title">
@@ -74,4 +95,22 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   styles: [],
 })
-export class ContactPage {}
+export class ContactPage {
+  private readonly title = inject(Title);
+  private readonly meta = inject(Meta);
+
+  constructor() {
+    this.title.setTitle('Contacto — Verificador de Billetes BO');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Contacta al desarrollador para reportes, dudas o solicitudes sobre Verificador BO. Respuesta habitual en menos de 24 horas.',
+    });
+    this.meta.updateTag({ property: 'og:title', content: 'Contacto — Verificador de Billetes BO' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        '¿Dudas o sugerencias? Escríbenos por WhatsApp y recibe soporte sobre la aplicación Verificador BO.',
+    });
+  }
+}

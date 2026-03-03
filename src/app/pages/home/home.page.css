@@ -13,9 +13,27 @@
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the hero block within the page */
+  gap: 3rem;
+  max-width: 1200px; /* constrain the hero inner width */
+  margin: 0 auto; /* center horizontally */
+  padding: 2rem 0; /* vertical breathing room */
+  box-sizing: border-box;
+}
+
+/* Left column: headline and CTA */
+.hero-copy {
+  flex: 0 1 55%;
+  max-width: 640px;
+}
+
+/* Right column: device mockup */
+.hero-device {
+  flex: 0 1 45%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 

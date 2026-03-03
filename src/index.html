@@ -9,6 +9,16 @@
       name="description"
       content="Verificador BO — Verifica billetes bolivianos al instante. App gratuita que utiliza datos oficiales del Banco Central de Bolivia para identificar billetes fuera de circulación."
     />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="author" content="Miguel Angel Zenteno Orellana" />
+    <meta name="application-name" content="Verificador de Billetes BO" />
+    <meta
+      name="keywords"
+      content="verificador billetes bolivia, billetes fuera de circulacion, banco central bolivia, BCB billetes, app android bolivia, verificar billete boliviano, billetes retirados BCB, Keybusy Software"
+    />
     <link rel="canonical" href="https://verificador-billetes-bo-web.vercel.app/" />
 
     <!-- Favicons & PWA manifest -->
@@ -21,6 +31,7 @@
     <!-- Open Graph -->
     <meta property="og:site_name" content="Verificador de Billetes BO" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_BO" />
     <meta property="og:title" content="Verificador de Billetes BO" />
     <meta
       property="og:description"
@@ -31,6 +42,9 @@
       property="og:image"
       content="https://verificador-billetes-bo-web.vercel.app/assets/icon.png"
     />
+    <meta property="og:image:alt" content="Ícono de la app Verificador de Billetes BO" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -43,6 +57,44 @@
       name="twitter:image"
       content="https://verificador-billetes-bo-web.vercel.app/assets/icon.png"
     />
+    <meta name="twitter:image:alt" content="Ícono de la app Verificador de Billetes BO" />
+
+    <!-- AI / LLM discovery (llms.txt standard) -->
+    <link rel="llms" href="https://verificador-billetes-bo-web.vercel.app/llms.txt" />
+    <link rel="llms-full" href="https://verificador-billetes-bo-web.vercel.app/llms-full.txt" />
+
+    <!-- WebSite structured data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Verificador de Billetes BO",
+        "url": "https://verificador-billetes-bo-web.vercel.app/",
+        "description": "Sitio oficial de Verificador de Billetes BO — app Android gratuita para verificar billetes bolivianos usando datos oficiales del Banco Central de Bolivia.",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Person",
+          "name": "Miguel Angel Zenteno Orellana",
+          "url": "https://github.com/SudoCode76",
+          "sameAs": [
+            "https://github.com/SudoCode76",
+            "https://www.linkedin.com/in/miguel-zenteno/"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Keybusy Software"
+          }
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://verificador-billetes-bo-web.vercel.app/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
   <body>
     <app-root></app-root>
