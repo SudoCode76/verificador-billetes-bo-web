@@ -18,7 +18,11 @@
 
   <nav class="nav-links" [class.open]="menuOpen()">
     @for (link of links; track link.href) {
-      <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+      @if (link.href.startsWith('/')) {
+        <a [routerLink]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+      } @else {
+        <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+      }
     }
   </nav>
 

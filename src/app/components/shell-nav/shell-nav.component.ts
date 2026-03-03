@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 
 export interface NavLink {
@@ -10,7 +11,7 @@ export interface NavLink {
   selector: 'app-shell-nav',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './shell-nav.component.html',
   styleUrls: ['./shell-nav.component.css'],
 })

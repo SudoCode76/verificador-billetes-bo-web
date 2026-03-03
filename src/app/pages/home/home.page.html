@@ -1,0 +1,162 @@
+<main class="page-content">
+  <section class="hero" id="inicio">
+    <div class="hero-copy">
+      <div class="badge">Nuevo diseno Fluent</div>
+      <h1>
+        Seguridad en
+        <span class="gradient-text">tus manos</span>
+      </h1>
+      <p>Identifica facilmente escaneando con la camara los billes sin valor legal segun bcb</p>
+      <div class="hero-actions">
+        <button type="button" class="primary-btn" (click)="descargarApk()">
+          <span class="material-symbols-outlined">android</span>
+          Descargar para Android
+        </button>
+      </div>
+    </div>
+    <div class="hero-device" aria-hidden="true">
+      <img
+        [ngSrc]="heroImage"
+        width="320"
+        height="640"
+        alt="Mockup de la app en el hero"
+        loading="lazy"
+        class="hero-screen"
+      />
+    </div>
+  </section>
+
+  <section class="features-section" id="features">
+    <div class="feature-grid">
+      @for (feature of features; track feature.title) {
+        <article class="feature-card">
+          <div class="icon-circle">
+            <span class="material-symbols-outlined">{{ feature.icon }}</span>
+          </div>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="screenshots-section" id="screenshots">
+    <div class="section-heading">
+      <div>
+        <h2>Capturas de pantalla</h2>
+        <p>Eche un vistazo a la interfaz limpia y funcional de nuestra aplicacion.</p>
+      </div>
+      <div class="capture-controls">
+        <button type="button" aria-label="Anterior" (click)="prevScreenshot()">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <button type="button" aria-label="Siguiente" (click)="nextScreenshot()">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+    <div class="screenshot-grid">
+      @for (screenshot of visibleScreenshots(); track screenshot.src; let index = $index) {
+        <article class="screenshot-card" [style.animationDelay]="index * 0.08 + 's'">
+          <img
+            [ngSrc]="screenshot.src"
+            width="320"
+            height="640"
+            [alt]="screenshot.alt"
+            loading="lazy"
+            class="screenshot"
+          />
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="developer-section" id="developer">
+    <div class="developer-grid">
+      <article class="developer-card">
+        <div class="developer-pill">Desarrollador Principal</div>
+        <h3>Miguel Angel Zenteno Orellana</h3>
+        <p>Desarrollador independiente especializado en aplicaciones moviles para Bolivia.</p>
+        <div class="social-buttons">
+          @for (social of socialLinks; track social.label) {
+            <a
+              [href]="social.href"
+              [attr.aria-label]="social.label"
+              title="{{ social.label }}"
+              target="_blank"
+              rel="noopener"
+            >
+              @switch (social.icon) {
+                @case ('github') {
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.45-3.88-1.45-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.48.11-3.08 0 0 .96-.31 3.15 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.19-1.5 3.15-1.18 3.15-1.18.62 1.6.23 2.79.11 3.08.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.68.41.36.77 1.07.77 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.21.66.79.55C20.71 21.38 24 17.08 24 12 24 5.73 18.27.5 12 .5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                }
+                @case ('linkedin') {
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.24 8.5h4.52V24H.24V8.5zM8.5 8.5h4.34v2.06h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 6.99V24h-4.52v-7.44c0-1.78-.03-4.07-2.48-4.07-2.48 0-2.86 1.94-2.86 3.94V24H8.5V8.5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                }
+                @case ('whatsapp') {
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20.52 3.48A11.95 11.95 0 0 0 12 .04C5.37.04-.02 5.43-.02 12.06c0 2.12.56 4.17 1.62 5.99L.5 23.5l5.66-1.48A11.95 11.95 0 0 0 12 23.96c6.63 0 12.04-5.39 12.04-11.96 0-3.2-1.24-6.21-3.56-8.52zM12 21.5c-1.6 0-3.15-.42-4.5-1.21l-.32-.19-3.36.88.9-3.28-.21-.35A8.92 8.92 0 0 1 3 12.06c0-4.97 4.03-9 9-9 2.4 0 4.65.94 6.36 2.65A8.92 8.92 0 0 1 21 12.06C21 17.03 16.97 21.5 12 21.5z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M17.2 14.03c-.22-.11-1.3-.64-1.5-.71-.2-.07-.34-.11-.49.11-.15.22-.6.71-.74.86-.14.14-.28.16-.5.05-.22-.11-.93-.34-1.77-1.09-.65-.58-1.09-1.29-1.22-1.51-.13-.22-.01-.34.1-.45.1-.1.22-.28.33-.42.11-.14.15-.24.22-.4.07-.16.03-.3-.01-.42-.04-.12-.49-1.19-.67-1.63-.18-.43-.36-.37-.49-.38-.13-.01-.28-.01-.43-.01-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9 0 1.12.82 2.2.94 2.35.12.15 1.63 2.5 3.95 3.5 2.32 1 2.32.67 2.74.63.42-.04 1.37-.56 1.56-1.10.19-.54.19-1.01.13-1.11-.06-.1-.22-.16-.44-.27z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                }
+                @default {
+                  <span class="material-symbols-outlined">{{ social.icon }}</span>
+                }
+              }
+            </a>
+          }
+        </div>
+      </article>
+      <article class="company-card">
+        <div class="company-badge">
+          <span class="material-symbols-outlined">business</span>
+        </div>
+        <h3>Keybusy Software</h3>
+        <p>Innovando en tecnologia financiera y herramientas de productividad para empresas.</p>
+        <a class="ghost-btn" href="#">
+          <span>Visitar sitio web</span>
+          <span class="material-symbols-outlined">open_in_new</span>
+        </a>
+      </article>
+    </div>
+  </section>
+</main>
