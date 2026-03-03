@@ -7,9 +7,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
     <main class="w-full max-w-2xl mx-auto flex flex-col items-center flex-grow pt-12 pb-20 px-6">
       <section class="text-center mb-10">
-        <h1 class="text-4xl font-bold mb-3 tracking-tight install-hero-title">Contacto</h1>
+        <h1 class="text-4xl font-bold mb-3 tracking-tight install-hero-title">
+          Contacta al desarrollador
+        </h1>
         <p class="text-lg text-text-secondary dark:text-text-secondary-dark">
-          ¿Tienes dudas, sugerencias o encontraste un error? Escríbeme directamente.
+          ¿Dudas, sugerencias o encontraste un error? Escríbeme y recibirás respuesta en menos de 24
+          horas.
         </p>
       </section>
 
@@ -34,7 +37,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         <h2 class="text-2xl font-bold mb-3">Escríbeme por WhatsApp</h2>
         <p class="text-text-secondary dark:text-text-secondary-dark mb-8 max-w-md">
           La forma más rápida de contactarme. Respondo consultas sobre la aplicación, reportes de
-          errores, sugerencias de mejora o solicitudes de desarrollo de nuevas aplicaciones.
+          errores, sugerencias de mejora o solicitudes de desarrollo.
+          <br />Miguel Zenteno · Keybusy Software
         </p>
 
         <a
@@ -52,7 +56,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         </a>
 
         <p class="text-xs text-text-secondary-dark mt-4">
-          Al hacer clic serás redirigido a WhatsApp
+          Al hacer clic serás redirigido a WhatsApp — Miguel Zenteno, Keybusy Software
         </p>
       </div>
 

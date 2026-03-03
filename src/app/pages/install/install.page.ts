@@ -8,10 +8,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     <main class="w-full max-w-4xl mx-auto px-6 py-12 flex flex-col items-center">
       <section class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 install-hero-title">
-          Cómo instalar la aplicación
+          Cómo instalar Verificador BO en Android
         </h1>
         <p class="text-lg text-text-secondary dark:text-text-secondary-dark max-w-2xl mx-auto">
-          Sigue estos sencillos pasos para instalar Verificador BO en tu dispositivo Android.
+          Instala la aplicación gratuita en minutos, sin necesidad de crear una cuenta. Sigue los
+          pasos y tendrás Verificador BO listo para usar.
         </p>
       </section>
 

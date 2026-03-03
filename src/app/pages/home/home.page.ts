@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import { Title, Meta } from '@angular/platform-browser';
 import { SocialLink } from '../../models/social-link.model';
 
 interface Feature {
@@ -26,26 +27,43 @@ interface InstallStep {
   styleUrls: ['./home.page.css'],
 })
 export class HomePage {
+  private readonly title = inject(Title);
+  private readonly meta = inject(Meta);
+
+  constructor() {
+    this.title.setTitle('Verificador de Billetes BO — Detecta billetes fuera de circulación');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Detecta billetes fuera de circulación en segundos escaneando la serie con la cámara de tu celular, usando datos oficiales del Banco Central de Bolivia.',
+    });
+    this.meta.updateTag({ property: 'og:title', content: 'Verificador de Billetes BO' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Detecta billetes fuera de circulación en segundos — app gratuita basada en datos oficiales del Banco Central de Bolivia.',
+    });
+  }
   readonly heroImage = 'assets/images/screenshots/presentation.png';
 
   readonly features: Feature[] = [
     {
       icon: 'qr_code_scanner',
-      title: 'Identificacion Rapida',
+      title: 'Identificación rápida',
       description:
-        'Escanee y verifique billetes en segundos utilizando la camara de su dispositivo con alta precision.',
+        'Escanea y verifica billetes en segundos usando la cámara de tu dispositivo con alta precisión.',
     },
     {
       icon: 'database',
       title: 'Datos Oficiales del BCB',
       description:
-        'La informacion esta basada en los rangos de series publicados oficialmente por el Banco Central de Bolivia y se actualiza cuando el BCB publica nuevos comunicados.',
+        'La información se basa en los rangos de series publicados oficialmente por el Banco Central de Bolivia y se actualiza con cada comunicado oficial.',
     },
     {
       icon: 'design_services',
-      title: 'Diseno Nativo Android',
+      title: 'Diseño nativo Android',
       description:
-        'Interfaz que sigue los lineamientos de Material Design para ofrecer una experiencia fluida, familiar y comoda.',
+        'Interfaz que sigue los lineamientos de Material Design para ofrecer una experiencia fluida, familiar y cómoda.',
     },
   ];
 
@@ -68,17 +86,17 @@ export class HomePage {
     {
       label: 'Descargue el APK',
       detail:
-        'Descargue la ultima version cifrada desde Keybusy Software y permita instalaciones externas cuando el sistema lo solicite.',
+        'Descarga la última versión segura desde Keybusy Software. Si tu dispositivo solicita permiso, permite instalaciones desde fuentes desconocidas.',
     },
     {
       label: 'Otorgue permisos',
       detail:
-        'Active el acceso a la camara y el almacenamiento para que la app pueda escanear y guardar comprobantes locales.',
+        'Activa el acceso a la cámara y el almacenamiento para que la app pueda escanear y guardar comprobantes.',
     },
     {
       label: 'Verifique billetes',
       detail:
-        'Enfoca el billete, deja que la app analice la serie y revisa los indicadores de autenticidad con un solo toque.',
+        'Enfoca el billete, la app analizará la serie y mostrará los indicadores de autenticidad en pantalla.',
     },
   ];
 
