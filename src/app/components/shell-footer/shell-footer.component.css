@@ -51,6 +51,12 @@
 .social-buttons a:hover {
   background: var(--btn-hover);
   border-color: var(--border-medium);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.social-buttons a:focus-visible {
+  outline: 2px solid rgba(10, 135, 245, 0.32);
+  outline-offset: 3px;
 }
 
 @media (max-width: 640px) {

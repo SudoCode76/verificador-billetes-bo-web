@@ -94,9 +94,9 @@ export class App {
   ];
 
   readonly socialLinks: SocialLink[] = [
-    { label: 'GitHub', href: '#', icon: 'code' },
-    { label: 'LinkedIn', href: '#', icon: 'work' },
-    { label: 'WhatsApp', href: '#', icon: 'chat' },
+    { label: 'GitHub', href: 'https://github.com/SudoCode76?tab=repositories', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/miguel-zenteno/', icon: 'linkedin' },
+    { label: 'WhatsApp', href: 'https://wa.me/59162994685', icon: 'whatsapp' },
   ];
 
   /** Index of the first visible screenshot (carousel state). */
