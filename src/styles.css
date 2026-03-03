@@ -11,14 +11,15 @@
 
   /* Glassmorphic surfaces */
   --surface-glass: rgba(255, 255, 255, 0.65);
-  --surface-card: rgba(255, 255, 255, 0.75);
-  --surface-card-hover: rgba(255, 255, 255, 0.9);
+  /* Surfaces: make cards clearly lighter than the page in light mode */
+  --surface-card: #ffffff;
+  --surface-card-hover: rgba(255, 255, 255, 0.98);
   --surface-nav-dropdown: rgba(255, 255, 255, 0.96);
   --surface-footer: rgba(255, 255, 255, 0.7);
 
   /* Borders */
-  --border-subtle: rgba(148, 163, 184, 0.3);
-  --border-medium: rgba(148, 163, 184, 0.5);
+  --border-subtle: rgba(15, 23, 42, 0.04);
+  --border-medium: rgba(15, 23, 42, 0.08);
 
   /* Typography */
   --text-main: #111827;
@@ -39,6 +40,11 @@
   /* Legacy aliases kept for backwards compat */
   --background-light: #f3f3f3;
   --background-dark: #0d0d0d;
+
+  /* Warning / note palette */
+  --warning-bg: #fff7ed;
+  --warning-border: rgba(245, 158, 11, 0.12);
+  --warning-text: #92400e;
 }
 
 /* ============================================================
@@ -49,13 +55,13 @@
   --bg-page: #0d0d0d;
 
   --surface-glass: rgba(18, 18, 18, 0.78);
-  --surface-card: rgba(255, 255, 255, 0.05);
+  --surface-card: rgba(255, 255, 255, 0.04);
   --surface-card-hover: rgba(255, 255, 255, 0.09);
   --surface-nav-dropdown: rgba(14, 14, 14, 0.97);
   --surface-footer: rgba(18, 18, 18, 0.78);
 
-  --border-subtle: rgba(148, 163, 184, 0.12);
-  --border-medium: rgba(148, 163, 184, 0.22);
+  --border-subtle: rgba(255, 255, 255, 0.03);
+  --border-medium: rgba(255, 255, 255, 0.06);
 
   --text-main: #f1f5f9;
   --text-secondary: rgba(241, 245, 249, 0.55);
@@ -65,6 +71,11 @@
   --btn-hover: rgba(255, 255, 255, 0.14);
 
   --dot-grid-color: rgba(255, 255, 255, 0.035);
+
+  /* Warning / note palette (dark) */
+  --warning-bg: rgba(34, 30, 24, 0.28);
+  --warning-border: rgba(245, 158, 11, 0.35);
+  --warning-text: rgba(245, 158, 11, 0.95);
 }
 
 /* ============================================================
@@ -104,3 +115,85 @@ body::after {
 }
 
 @import './app/app.css';
+
+/* ============================================================
+   Additional utility surfaces used by pages
+   These mirror the mock's "mica" / "acrylic" styles so light
+   mode panels have a subtle lifted surface that reads well
+   against the page background.
+   ============================================================ */
+.bg-acrylic {
+  background-color: var(--surface-card);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid var(--border-medium);
+}
+
+.bg-mica {
+  background-color: var(--surface-glass);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Warning/note helper to improve contrast in light mode */
+.note-warning {
+  background: var(--warning-bg);
+  border-left: 4px solid var(--warning-border);
+  color: var(--warning-text);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+/* Panel surface used by step cards to ensure consistent light/dark rendering */
+.panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
+  color: var(--text-main);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+/* Right-side placeholder card used in the mock; tones adapt to theme */
+.placeholder-card {
+  background: rgba(15, 23, 42, 0.06);
+  border-radius: 0.5rem;
+}
+
+/* Install page specific helpers */
+.install-hero-title {
+  color: var(--text-main) !important;
+  text-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.cta-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 10px 30px rgba(10, 135, 245, 0.12);
+}
+.cta-primary:hover {
+  box-shadow: 0 14px 36px rgba(10, 135, 245, 0.16);
+}
+
+/* Ensure note text contrast is consistent */
+.note-warning p,
+.note-warning h4 {
+  color: var(--warning-text);
+}
+
+@media (min-width: 768px) {
+  .panel {
+    padding: 1.5rem;
+  }
+}
+
+.dark .placeholder-card {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Slightly tone down the dot-grid in light mode when surfaces are pale */
+@media (prefers-color-scheme: light) {
+  body::after {
+    opacity: 0.45;
+  }
+}

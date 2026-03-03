@@ -83,7 +83,7 @@ export class HomePage {
   ];
 
   readonly socialLinks: SocialLink[] = [
-    { label: 'GitHub', href: 'https://github.com/SudoCode76?tab=repositories', icon: 'github' },
+    { label: 'GitHub', href: 'https://github.com/SudoCode76', icon: 'github' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/miguel-zenteno/', icon: 'linkedin' },
     { label: 'WhatsApp', href: 'https://wa.me/59162994685', icon: 'whatsapp' },
   ];

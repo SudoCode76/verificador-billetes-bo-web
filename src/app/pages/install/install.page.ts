@@ -5,105 +5,128 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   template: `
-    <main class="w-full max-w-5xl mx-auto flex flex-col items-center pt-10 pb-20 px-6">
-      <section class="w-full text-center mb-16 relative">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20"
-        >
-          <span class="material-symbols-outlined text-sm">download</span>
-          Guía de Instalación
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+    <main class="w-full max-w-4xl mx-auto px-6 py-12 flex flex-col items-center">
+      <section class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 install-hero-title">
           Cómo instalar la aplicación
         </h1>
         <p class="text-lg text-text-secondary dark:text-text-secondary-dark max-w-2xl mx-auto">
-          Sigue estos sencillos pasos para instalar el Verificador de Billetes BO en tu dispositivo
-          Android de forma segura y rápida.
+          Sigue estos sencillos pasos para instalar Verificador BO en tu dispositivo Android.
         </p>
       </section>
 
-      <div class="w-full space-y-8">
-        <!-- Step cards (1..4) condensed for brevity; same structure as provided mockup -->
+      <section class="w-full space-y-6">
         <div
-          class="bg-acrylic dark:bg-surface-dark border border-gray-200/60 dark:border-gray-700 rounded-fluent-xl shadow-fluent overflow-hidden"
+          class="panel bg-acrylic dark:bg-surface-dark p-6 md:p-8 rounded-fluent-lg shadow-fluent flex flex-col md:flex-row gap-6 md:items-center group hover:shadow-fluent-hover transition-all"
         >
-          <div class="flex flex-col md:flex-row h-full">
-            <div class="md:w-1/2 p-8 flex flex-col justify-center">
-              <div class="flex items-start gap-4 mb-4">
-                <div
-                  class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg"
-                >
-                  1
-                </div>
-                <h2 class="text-2xl font-bold pt-2">Descarga el archivo APK</h2>
-              </div>
-              <p class="text-text-secondary dark:text-text-secondary-dark mb-6 pl-16">
-                Haz clic en el botón de descarga para obtener la última versión del instalador (APK)
-                directamente desde nuestro servidor seguro.
-              </p>
-              <div class="pl-16">
-                <button
-                  class="text-primary hover:text-primary-hover font-medium flex items-center gap-2 group"
-                >
-                  Iniciar descarga
-                  <span
-                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-                    >arrow_forward</span
-                  >
-                </button>
-              </div>
-            </div>
-            <div
-              class="md:w-1/2 bg-blue-50/50 dark:bg-blue-900/10 flex items-end justify-center pt-8 px-8 border-t md:border-t-0 md:border-l border-gray-200/50 dark:border-gray-700"
-            >
-              <div
-                class="w-48 h-64 bg-white dark:bg-gray-800 rounded-t-3xl border-t-8 border-x-8 border-gray-900 shadow-xl relative overflow-hidden"
-              >
-                <div
-                  class="w-full h-full bg-gray-100 dark:bg-gray-700 flex flex-col items-center justify-center p-4"
-                >
-                  <div
-                    class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3 text-primary"
-                  >
-                    <span class="material-symbols-outlined">download</span>
-                  </div>
-                  <div class="w-3/4 h-2 bg-gray-300 dark:bg-gray-600 rounded mb-2"></div>
-                  <div class="w-1/2 h-2 bg-gray-300 dark:bg-gray-600 rounded"></div>
-                </div>
-              </div>
-            </div>
+          <div class="flex-shrink-0">
+            <span class="text-6xl font-black text-primary/80 select-none">1</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2">Descarga el archivo APK</h3>
+            <p class="text-text-secondary dark:text-text-secondary-dark">
+              Presiona el botón de descarga para obtener la última versión de la aplicación
+              directamente en tu dispositivo. El archivo es seguro y verificado.
+            </p>
+          </div>
+          <div
+            class="w-full md:w-48 h-32 placeholder-card rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-300"
+          >
+            <span class="material-symbols-outlined text-4xl">download_for_offline</span>
           </div>
         </div>
-      </div>
 
-      <div
-        class="w-full mt-12 bg-acrylic dark:bg-surface-dark border-l-4 border-yellow-400 p-6 rounded-r-fluent-lg shadow-sm flex items-start gap-4"
-      >
-        <div class="text-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 p-2 rounded-full">
-          <span class="material-symbols-outlined">lightbulb</span>
+        <div
+          class="panel bg-acrylic dark:bg-surface-dark p-6 md:p-8 rounded-fluent-lg shadow-fluent flex flex-col md:flex-row gap-6 md:items-center group hover:shadow-fluent-hover transition-all"
+        >
+          <div class="flex-shrink-0">
+            <span class="text-6xl font-black text-primary/80 select-none">2</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2">Permite la instalación de fuentes desconocidas</h3>
+            <p class="text-text-secondary dark:text-text-secondary-dark">
+              Si es la primera vez que instalas una app fuera de Play Store, tu navegador te pedirá
+              permiso. Ve a
+              <span class="font-semibold text-gray-800 dark:text-gray-200"
+                >Ajustes &gt; Seguridad</span
+              >
+              y activa la opción.
+            </p>
+          </div>
+          <div
+            class="w-full md:w-48 h-32 placeholder-card rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-300"
+          >
+            <span class="material-symbols-outlined text-4xl">settings_applications</span>
+          </div>
         </div>
-        <div>
-          <h3 class="font-bold text-lg mb-1">Nota Importante</h3>
-          <p class="text-sm text-text-secondary dark:text-text-secondary-dark">
-            Es posible que Google Play Protect muestre una advertencia al instalar. Esto es normal
-            para aplicaciones fuera de la tienda. Simplemente selecciona "Instalar de todas formas"
-            para continuar.
-          </p>
-        </div>
-      </div>
 
-      <div class="w-full py-16 text-center mt-8">
-        <h2 class="text-3xl font-bold mb-6">¿Listo para comenzar?</h2>
+        <div
+          class="panel bg-acrylic dark:bg-surface-dark p-6 md:p-8 rounded-fluent-lg shadow-fluent flex flex-col md:flex-row gap-6 md:items-center group hover:shadow-fluent-hover transition-all"
+        >
+          <div class="flex-shrink-0">
+            <span class="text-6xl font-black text-primary/80 select-none">3</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2">Abre el archivo descargado</h3>
+            <p class="text-text-secondary dark:text-text-secondary-dark">
+              Una vez finalizada la descarga, toca la notificación o busca el archivo APK en tu
+              carpeta de
+              <span class="font-semibold text-gray-800 dark:text-gray-200">Descargas</span>.
+            </p>
+          </div>
+          <div
+            class="w-full md:w-48 h-32 placeholder-card rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-300"
+          >
+            <span class="material-symbols-outlined text-4xl">folder_open</span>
+          </div>
+        </div>
+
+        <div
+          class="panel bg-acrylic dark:bg-surface-dark p-6 md:p-8 rounded-fluent-lg shadow-fluent flex flex-col md:flex-row gap-6 md:items-center group hover:shadow-fluent-hover transition-all"
+        >
+          <div class="flex-shrink-0">
+            <span class="text-6xl font-black text-primary/80 select-none">4</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2">Instala y abre la aplicación</h3>
+            <p class="text-text-secondary dark:text-text-secondary-dark">
+              Confirma la instalación y espera unos segundos. ¡Listo! Ahora puedes abrir Verificador
+              BO y empezar a escanear billetes.
+            </p>
+          </div>
+          <div
+            class="w-full md:w-48 h-32 placeholder-card rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-300"
+          >
+            <span class="material-symbols-outlined text-4xl">verified</span>
+          </div>
+        </div>
+
+        <div class="note-warning mt-8 flex gap-4 items-start w-full">
+          <div
+            class="text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-transparent p-2 rounded-full"
+          >
+            <span class="material-symbols-outlined">warning</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-yellow-800 dark:text-yellow-400 mb-1">Nota Importante</h4>
+            <p class="text-sm text-[--warning-text]">
+              El proceso puede variar ligeramente según la marca y versión de tu dispositivo Android
+              (Samsung, Xiaomi, Motorola, etc.). Si tienes problemas, revisa la configuración de
+              seguridad de tu teléfono.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-16 text-center">
+        <h2 class="text-2xl font-bold mb-6">¿Listo para instalar?</h2>
         <button
-          class="bg-primary hover:bg-primary-hover text-white text-lg font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 mx-auto"
+          class="inline-flex items-center justify-center gap-3 cta-primary px-8 py-4 rounded-fluent-lg font-semibold transition-all transform hover:-translate-y-0.5 text-lg"
         >
           <span class="material-symbols-outlined">android</span>
           Descargar APK ahora
         </button>
-        <p class="mt-4 text-sm text-text-secondary dark:text-text-secondary-dark">
-          Versión 2.4.0 • Actualizado Oct 2023 • 15 MB
-        </p>
-      </div>
+      </section>
     </main>
   `,
   styles: [],
